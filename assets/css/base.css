@@ -245,6 +245,7 @@ html {
 
 .pagination-item {
     margin: 0 12px;
+    cursor: pointer;
 }
 
 .pagination-item--active .pagination__link {
@@ -253,7 +254,7 @@ html {
 }
 
 .pagination-item--active .pagination__link:hover {
-    background-color: #ed5c3f;
+    background-color: #000080;
 }
 
 .pagination__link {
@@ -268,4 +269,12 @@ html {
     line-height: var(--height);
     text-align: center;
     border-radius: 2px;
+}
+
+.pagination-item--disable {
+    pointer-events: none;
+}
+
+.pagination-item--disable:first-child .pagination__link {
+    color: #ccc;
 }

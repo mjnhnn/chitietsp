@@ -235,9 +235,9 @@
     cursor: default;
     animation: header__notify-growth ease-in 0.3s;
     will-change: transform opacity;
-    transform-origin: top right;
+    transform-origin: calc(100% - 30px) top;
     display: none;
-    z-index: 1;
+    z-index: 2;
     border-radius: 2px;
 }
 
@@ -248,17 +248,34 @@
     border-color: transparent transparent var(--white-color) transparent;
     position: absolute;
     right: 4px;
-    top: -28px;
+    top: -7px;
+    border-top: none;
 }
 
 .header__notify::after {
+    content: "";
+    border-width: 20px 30px;
+    border-style: solid;
+    border-color: transparent transparent #eee transparent;
+    position: absolute;
+    right: 4px;
+    top: -9px;
+    border-top: none;
+    z-index: -1;
+}
+
+.header__navbar-item-has-notify {
+    position: relative;
+}
+
+.header__navbar-item-has-notify::after {
     content: "";
     display: block;
     position: absolute;
     width: 100px;
     height: 40px;
     right: 0;
-    top: -16px;
+    top: 25px;
 }
 
 .header__navbar-item-has-notify:hover .header__notify {
@@ -929,8 +946,13 @@
 
 /* lịch sử tìm kiếm */
 
-.header__search-input:focus~.header__search-history {
+
+/* #header__search-historys:target {
     display: block;
+} */
+
+.header__search-input:focus~.header__search-history {
+    /* display: block; */
 }
 
 .header__search-history {
@@ -981,7 +1003,7 @@
 /* app container */
 
 .app__container {
-    background-color: #f5f5f5;
+    background-color: #f1f5f5;
 }
 
 .app__content {
@@ -1472,7 +1494,6 @@ i.home-product-item__like-icon-fill {
 
 .product__details {
     margin: 0 8px;
-    background-color: #f5f5f5;
 }
 
 .product__details-title {}
@@ -1941,14 +1962,14 @@ i.home-product-item__like-icon-fill {
     border-top-left-radius: 3px;
 }
 
-.product-introduction__link--active {
+.product-intro__btn--active {
     background-color: var(--white-color);
 }
 
-.product-introduction__link--active::after {
+.product-intro__btn--active::after {
     content: "";
-    border-bottom: solid 2px #ed1b24;
     display: block;
+    border-bottom: solid 2px #ed1b24;
 }
 
 .Detailed-introduction {
@@ -2051,6 +2072,21 @@ i.home-product-item__like-icon-fill {
     padding-top: 15px;
     display: flex;
     align-items: center;
+    display: none;
+    animation: fadein ease-in 0.3s;
+}
+
+.check-comment-form:checked~.form-input {
+    display: flex;
+}
+
+
+/* .comment-form__content textarea:focus~.form-input {
+    display: flex;
+} */
+
+.form-input--open {
+    display: flex;
 }
 
 .form-input__rating {
@@ -2117,6 +2153,7 @@ i.home-product-item__like-icon-fill {
     border-radius: 3px;
     text-decoration: none;
     text-align: center;
+    cursor: pointer;
 }
 
 .item-comment {
@@ -2209,6 +2246,10 @@ i.home-product-item__like-icon-fill {
 .custom-reply--no-boder {
     border-bottom: none !important;
     padding: 0 !important;
+}
+
+.Question__h1 {
+    font-size: 1.4rem !important;
 }
 
 

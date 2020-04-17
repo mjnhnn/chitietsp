@@ -600,12 +600,12 @@ Giá
                         </div>
                     </div>
                     <div class="product-introduction">
-                        <div class="product-introduction__link">
-                            <a href="#Detailed-introduction-id" class="product-introduction__link--active">Giới thiệu sản phẩm</a>
-                            <a href="#specification">Thông số kỹ thuật</a>
-                            <a href="#video">Video</a>
-                            <a href="#product-reviews">Đánh giá</a>
-                            <a>Hỏi đáp</a>
+                        <div id="btn-active" class="product-introduction__link">
+                            <a href="#Detailed-introduction-id" class="product-intro__btn product-intro__btn--active">Giới thiệu sản phẩm</a>
+                            <a href="#specification" class="product-intro__btn">Thông số kỹ thuật</a>
+                            <a href="#video" class="product-intro__btn">Video</a>
+                            <a href="#product-reviews" class="product-intro__btn">Đánh giá</a>
+                            <a href="#Question" class="product-intro__btn">Hỏi đáp</a>
                         </div>
                         <div id="Detailed-introduction-id" class="Detailed-introduction">
                             <h1>Đặc điểm nổi bật của Laptop MSI Gaming GF63 9RCX 646VN (i5 9300H/8GB RAM/GTX 1050Ti/512GB SSD/15.6 inch FHD/Win 10)</h1>
@@ -770,10 +770,15 @@ Giá
                                     <div class="comment-form__img">
                                         <img src="assets/img/custom.jpg" alt="">
                                     </div>
+
                                     <form action="">
+
                                         <div class="comment-form__content">
-                                            <textarea name="" placeholder="Mời bạn để lại bình luận"></textarea>
-                                            <div class="form-input">
+
+                                            <textarea onclick="funtionform()" name="" placeholder="Mời bạn để lại bình luận"></textarea>
+                                            <!-- <input type="checkbox" class="check-comment-form" id="check-comment"> -->
+
+                                            <div id="form-input--hide" class="form-input">
                                                 <div class="form-input__rating">
                                                     <span>Đánh giá:</span>
                                                     <i class="form-input__rating-icon form-input__rating-icon-active  fas fa-star"></i>
@@ -792,11 +797,14 @@ Giá
                                                     <button>Gửi bình luận</button>
                                                 </div>
                                                 <div class="form-input__link">
-                                                    <a href="">Đóng bình luận</a>
+                                                    <a onclick="funtionclose()">Đóng bình luận</a>
                                                 </div>
                                             </div>
+
                                         </div>
+
                                     </form>
+
                                 </div>
 
                                 <!-- comment và trả lời comment -->
@@ -939,12 +947,20 @@ Giá
                                 <!-- comment và trả lời comment -->
                             </div>
                         </div>
+                        <div id="Question" class="specifications">
+                            <h1 class="Question__h1">Hỏi đáp về LENOVO GAMING FALCON 014 (I5 9400F/B365/8GB RAM/SSD 512GB/GTX 1660 Super/Nguồn 550W/Water Cooling Freezemod/Led RGB)</h1>
+                            <div class="comment-facebook">
+                                <div id="fb-root"></div>
+                                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=580750925983459&autoLogAppEvents=1"></script>
+                                <div class="fb-comments" data-href="https://facebook.com/mjnhnnnn/" data-width="100%" data-numposts="5"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <Script src="assets/js/jqzoom.js"></Script>
     <script src="assets/js/script.js"></script>
     <script type="text/javascript">
@@ -954,6 +970,11 @@ Giá
             small_thumbs: 4,
             autoplay: false
         });
+    </script>
+    <script type="text/javascript">
+        $(document).on('click', '.product-intro__btn', function() {
+            $(this).addClass('product-intro__btn--active').siblings().removeClass('product-intro__btn--active')
+        })
     </script>
 </body>
 
